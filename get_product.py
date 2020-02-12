@@ -1,6 +1,7 @@
-# getdata.py
+# get_product.py
 
 import requests
+import json 
 
 print("GETTING SOME DATA FROM THE INTERNET...")
 
@@ -11,8 +12,13 @@ response = requests.get(request_url)
 print(type(response))
 # print(dir(response))
 
-print(response.status_code)
-print(response.text)
+# print(response.status_code)
+# print(response.text)
 
-breakpoint()
+parsed_response = json.loads(response.text)
+print(type(parsed_response))
+print(parsed_response["name"])
+
+
+# breakpoint()
 
